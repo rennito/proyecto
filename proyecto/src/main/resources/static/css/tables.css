@@ -1,0 +1,32 @@
+.details-row {
+    display: none;
+}
+
+.details-row {
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0; /* Inicialmente escondido */
+}
+
+.details-row.expanded {
+    max-height: 500px; /* Ajusta según el contenido */
+    display: table-row; /* Asegúrate de que sea una fila de tabla */
+}
+    /* Asegurarse de que la tabla sea responsiva en pantallas pequeñas */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    @media (max-width: 768px) {
+        .table td {
+            white-space: nowrap;
+        }
+    }
+
+    .details-row {
+        transition: all 0.3s ease;
+    }
+
+    .details-row.hidden {
+        display: none;
+    }

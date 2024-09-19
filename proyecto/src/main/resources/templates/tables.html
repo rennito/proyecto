@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="~{layout/layout :: head}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/tables.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Dev System <sup>1</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0" />
+
+            <!-- Nav Item - Talbero pincipal -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Tablero principal</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider" />
+
+            <!-- Heading -->
+            <div class="sidebar-heading">Modulos</div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Registro de Alumnos</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Componentes:</h6>
+                        <a class="collapse-item" href="/registro">Registrar</a>
+                        <a class="collapse-item" href="cards.html">Cards</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider" />
+
+            <!-- Heading -->
+            <div class="sidebar-heading">Tablas</div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Reportes</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Reportes:</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Other Pages:</h6>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Grafica de asistencias</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoTable"
+                    aria-expanded="true" aria-controls="collapseTwoTable">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Tablas</span>
+                </a>
+                <div id="collapseTwoTable" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Tabla de registros:</h6>
+                        <a class="collapse-item" href="/tables">Alumnos registrados</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block" />
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+            <div class="sidebar-card d-none d-lg-flex">
+                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="..." />
+                <p class="text-center mb-2">
+                    <strong>Dev system Colegios</strong> lleva en orden asistencias de alumnos
+                    y registros, y mas!
+                </p>
+                <a class="btn btn-success btn-sm" href="https:devsystemcln.com/">En venta en linea</a>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2" />
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2" />
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">Alerts Center</h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for
+                                        your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+                <div class="container-fluid" layout:fargment="page-content">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Tabla de Alumnos</h1>
+                    </div>
+                </div>
+
+                <!-- TABLAAAAAA -->
+
+                <div class="container">
+                    <h1 class="my-4">Registros</h1>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Fecha de Nacimiento</th>
+                                    <th>Sexo</th>
+                                    <th>Nivel Académico</th>
+                                    <th>Grado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- Generar filas de datos -->
+                                <tr th:each="registro, iterStat : ${registros}">
+                                    <td data-label="Nombre" th:text="${registro.nombre}"></td>
+                                    <td data-label="Fecha de Nacimiento" th:text="${registro.fechaNacimiento}"></td>
+                                    <td data-label="Sexo" th:text="${registro.genero}"></td>
+                                    <td data-label="Nivel Académico" th:text="${registro.nivelAcademico}"></td>
+                                    <td data-label="Grado" th:text="${registro.curso}"></td>
+                                    <td data-label="Acciones">
+                                        <button type="button" class="btn btn-primary ver-mas"
+                                            th:data-index="${iterStat.index}" th:data-direccion="${registro.direccion}"
+                                            th:data-ciudad="${registro.ciudad}" th:data-estado="${registro.estado}"
+                                            th:data-codigo-postal="${registro.codigoPostal}"
+                                            th:data-telefono="${registro.telefono}" th:data-email="${registro.email}">
+                                            Ver Más
+                                        </button>
+
+                                        <!-- Botón Eliminar Registro -->
+                                        <form th:action="@{/eliminarRegistro/{id}(id=${registro.id})}" method="post"
+                                            style="display:inline;">
+                                            <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('¿Estás seguro de eliminar este registro?');">
+                                                Eliminar
+                                            </button>
+                                        </form>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Fila de detalles (vacía inicialmente) -->
+                <template id="details-template">
+                    <tr class="details-row" style="display: none;">
+                        <td colspan="6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p><strong>Dirección:</strong> <span class="direccion"></span></p>
+                                    <p><strong>Ciudad:</strong> <span class="ciudad"></span></p>
+                                    <p><strong>Estado:</strong> <span class="estado"></span></p>
+                                    <p><strong>Código Postal:</strong> <span class="codigo-postal"></span></p>
+                                    <p><strong>Teléfono:</strong> <span class="telefono"></span></p>
+                                    <p><strong>Email:</strong> <span class="email"></span></p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const buttons = document.querySelectorAll('.ver-mas');
+
+                        buttons.forEach(button => {
+                            button.addEventListener('click', function () {
+                                const index = button.getAttribute('data-index');
+                                const row = button.closest('tr'); // La fila del registro actual
+                                const template = document.getElementById('details-template').content.cloneNode(true);
+                                let detailsRow = document.querySelector(`tr.details-row[data-index="${index}"]`);
+
+                                if (!detailsRow) {
+                                    detailsRow = template.querySelector('tr.details-row');
+                                    detailsRow.setAttribute('data-index', index);
+
+                                    // Establecemos el contenido de la fila de detalles
+                                    detailsRow.querySelector('.direccion').textContent = button.getAttribute('data-direccion') || 'No disponible';
+                                    detailsRow.querySelector('.ciudad').textContent = button.getAttribute('data-ciudad') || 'No disponible';
+                                    detailsRow.querySelector('.estado').textContent = button.getAttribute('data-estado') || 'No disponible';
+                                    detailsRow.querySelector('.codigo-postal').textContent = button.getAttribute('data-codigo-postal') || 'No disponible';
+                                    detailsRow.querySelector('.telefono').textContent = button.getAttribute('data-telefono') || 'No disponible';
+                                    detailsRow.querySelector('.email').textContent = button.getAttribute('data-email') || 'No disponible';
+
+                                    // Insertamos la fila de detalles justo después de la fila del registro
+                                    row.insertAdjacentElement('afterend', detailsRow);
+                                }
+
+                                // Mostrar u ocultar la fila de detalles
+                                if (detailsRow.style.display === 'none' || detailsRow.style.display === '') {
+                                    detailsRow.style.display = 'table-row';
+                                    button.textContent = 'Ver Menos';
+                                } else {
+                                    detailsRow.style.display = 'none';
+                                    button.textContent = 'Ver Más';
+                                }
+                            });
+                        });
+
+                        const buttonsEliminar = document.querySelectorAll('.eliminar-registro');
+                        buttonsEliminar.forEach(button => {
+                            button.addEventListener('click', function () {
+                                const registroId = button.getAttribute('data-id');
+
+                                // Confirmación antes de eliminar
+                                if (confirm('¿Estás seguro de que deseas eliminar este registro?')) {
+                                    // Hacer una solicitud HTTP para eliminar el registro en la base de datos
+                                    fetch(`/eiminarRegistro/${registroId}`, {
+                                        method: 'DELETE',
+                                    })
+                                        .then(response => {
+                                            if (response.ok) {
+                                                console.log('Registro eliminado con ID:', registroId);
+
+                                                // Opcional: eliminar la fila de la tabla del DOM
+                                                const row = button.closest('tr');
+                                                row.remove();
+                                            } else {
+                                                console.error('Error al eliminar el registro.');
+                                            }
+                                        })
+                                        .catch(error => {
+                                            console.error('Hubo un problema con la solicitud:', error);
+                                        });
+                                }
+                            });
+                        });
+
+
+
+
+                    });
+                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Dev System 2024</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Select "Logout" below if you are ready to end your current session.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                            Cancel
+                        </button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript-->
+        <script th:src="@{vendor/jquery/jquery.min.js}"></script>
+        <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script th:src="@{vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script th:src="@{js/sb-admin-2.min.js}"></script>
+
+        <!-- Page level plugins -->
+        <script th:src="@{vendor/chart.js/Chart.min.js}"></script>
+
+        <!-- Page level custom scripts -->
+        <script th:src="@{js/demo/chart-area-demo.js}"></script>
+        <script th:src="@{js/demo/chart-pie-demo.js}"></script>
+        <!-- Otros scripts -->
+        <th:block layout:fragment="page-scripts"> </th:block>
+</body>
+
+</html>

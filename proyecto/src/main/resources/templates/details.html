@@ -1,0 +1,26 @@
+<!-- details.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalles</title>
+</head>
+<body>
+    <div th:fragment="detailsFragment">
+        <div class="card">
+            <div class="card-body">
+                <p><strong>Dirección:</strong> <span th:text="${registro.direccion != null ? registro.direccion : 'No disponible'}"></span></p>
+                <p><strong>Ciudad:</strong> <span th:text="${registro.ciudad != null ? registro.ciudad : 'No disponible'}"></span></p>
+                <p><strong>Estado:</strong> <span th:text="${registro.estado != null ? registro.estado : 'No disponible'}"></span></p>
+                <p><strong>Código Postal:</strong> <span th:text="${registro.codigoPostal != null ? registro.codigoPostal : 'No disponible'}"></span></p>
+                <p><strong>Teléfono:</strong> <span th:text="${registro.telefono != null ? registro.telefono : 'No disponible'}"></span></p>
+                <p><strong>Email:</strong> <span th:text="${registro.email != null ? registro.email : 'No disponible'}"></span></p>
+                <p><strong>Fecha de Inscripción:</strong> <span th:text="${registro.fechaInscripcion != null ? registro.fechaInscripcion : 'No disponible'}"></span></p>
+                <p><strong>Nombre del Tutor:</strong> <span th:text="${registro.nombreTutor != null ? registro.nombreTutor : 'No disponible'}"></span></p>
+                <p><strong>Teléfono del Tutor:</strong> <span th:text="${registro.telefonoTutor != null ? registro.telefonoTutor : 'No disponible'}"></span></p>
+                <p><strong>Email del Tutor:</strong> <span th:text="${registro.emailTutor != null ? registro.emailTutor : 'No disponible'}"></span></p>
+                <p><strong>Observaciones:</strong> <span th:text="${registro.observaciones != null ? registro.observaciones : 'No disponible'}"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
